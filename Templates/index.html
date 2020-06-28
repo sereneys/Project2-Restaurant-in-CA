@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Best Restaurants in Santa Clara, San Mateo and San Francisco Counties</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />   
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+
+    <!--Overlay Image with Title -->
+    <div class="container bg-overlay">
+        <div class="row text-center">
+            <h1>Best Restaurants in<br>Santa Clara, San Mateo and San Francisco<br>Counties</h1>
+            <br><br>
+        </div>
+    </div>
+
+    <!--Grid Set-up for Search Button and Drop-down for Search Criterias (2-3-1-6)-->
+    <div class="container" style="border:1px solid #cecece;">
+        <h3>Please enter your search criteria:</h3>
+        <div class="row">
+            <div class="col-md-2">
+                <h4>Select City</h4>
+                <select id="selDataset" onchange="getCity(this.value)"></select>            
+            </div>        
+            <!--Restaurant Category Drop-down-->
+            <div class="col-md-3">
+                <h4>Restaurant Category</h4>
+                <select id="category" onchange="getCategory(this.value)"></select>
+            </div>    
+            
+            <div class="col-md-1">
+            <!--Search Button-->
+            <button type="button" id = "search-button" class="btn btn-default" onclick="optionChanged()">Search</button>
+            </div>
+        
+            <div class="col-md-6"></div>
+        </div>    
+    </div>
+    
+    <!--Grid Set-up for Visual Display Section (6-6 with the right one split into two rows)-->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12" style="border:1px solid #cecece;">
+                <div id="map-holder">
+                    <div class="container fill">
+                        <div id="map">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-xs-6 col-sm-6" style="border:1px solid #cecece;">
+                <div>
+                    <h3>Top 10 Rated Restaurants</h3>
+                    <div id = "top10-chart">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6" style="border:1px solid #cecece;">
+                <div id="top10-table">
+                    <h3>Top Restaurants with Most # Reviews</h3>
+                    <button class="sort" data-sort="name">
+                        Sort by Name
+                    </button>
+                    <button class="sort" data-sort="rating">
+                        Sort by Rating
+                    </button>
+                    <table class="table table-striped">
+                        <thead>
+                            <th class="sort" data-sort="name">Name</th>
+                            <th class="sort" data-sort="category">Category</th>
+                            <th class="sort" data-sort="reviews">Number of Reviews</th>
+                            <th class="sort" data-sort="rating">Rating</th>
+                        </thead>
+                        <tbody class = "list" id = "table-body">
+                        </tbody>
+                    </table>    
+                </div>
+            </div>
+        </div>
+    </div>                    
+
+    <!--Dark Mode Script-->    
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.6/lib/darkmode-js.min.js"></script>
+    <!--script>
+    new Darkmode().showWidget();
+    </!--script-->
+
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    <!-- D3 JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+
+    <!-- sort function JavaScript-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <!-- Chart Javascript-->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="static/d3-tip.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap Javascript-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    
+
+    <!-- Our JavaScript -->
+    <script src="static/config.js"></script>
+    <script src="static/logic.js"></script>
+
+</body>
+
+</html>
