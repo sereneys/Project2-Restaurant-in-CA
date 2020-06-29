@@ -98,18 +98,6 @@ function createChart(response) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
     
-    /*
-    var tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([-10, 0])
-        .html(function(d) {
-            return "<strong>" + d.business_name + "</strong><br># of Reviews: " 
-            + d.review_count + "<br>Rating: " + d.average_rating + "<br>Category: " 
-            + d.category + "<br>Address: " + d.address + "<br>Phone#: " + d.phone_number;
-        });
-
-    svg.call(tip);
-    */
 
     // filter returned data with # of reviews greater than our threshold
     //filtered_result = response.filter(function(d){return d.review_count > 1000 });
@@ -157,30 +145,7 @@ function createChart(response) {
         .attr("width", x.bandwidth())
         .attr("height", d => (height - y(d.average_rating)))
         .attr("fill", "#69b3a2")
-    
-    // Step 1: Append a div to the body to create tooltips, assign it a class
-    // =======================================================
-    var toolTip = d3.select("body").append("div").attr("class", "tooltip");
-
-    // Step 2: Add an onmouseover event to display a tooltip
-    // ========================================================
-    bars.on("mouseover", function(d, i) {
-        toolTip.style("display", "block");
-        toolTip.html( "<strong>" + d.business_name + "</strong><br># of Reviews: " 
-            + d.review_count + "<br>Rating: " + d.average_rating + "<br>Category: " 
-            + d.category + "<br>Address: " + d.address + "<br>Phone#: " + d.phone_number)
-            .style("left", d3.event.pageX + "px")
-            .style("top", d3.event.pageY + "px");
-    })
-    // Step 3: Add an onmouseout event to make the tooltip invisible
-        .on("mouseout", function() {
-            toolTip.style("display", "none");
-        });
-    /*
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide);*/
 };
-
 
 // Create function to generate tables showing top10 with most reviews and their ratings
 function createTable(response) {
