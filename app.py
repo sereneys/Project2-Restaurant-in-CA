@@ -1,5 +1,3 @@
-city = ["Atherton", "Belmont", "Brisbane", "Burlingame", "Colma", "Daly City", "East Palo Alto", "Foster City",  "Half Moon Bay", "Menlo Park", "Millbrae", "Pacifica", "Portola Valley", "Redwood City", "San Bruno", "San Carlos", "San Francisco", "San Mateo", "South San Francisco", "Woodside", "Campbell", "Cupertino", "Gilroy", "Los Altos", "Milpitas", "Monte Sereno", "Morgan Hill", "Mountain View", "Palo Alto", "San Jose", "Santa Clara", "Saratoga", "Sunnyvale"]
-
 import os
 
 import pandas as pd
