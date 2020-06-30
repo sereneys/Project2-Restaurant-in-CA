@@ -84,7 +84,7 @@ function createChart(response) {
     d3.select("#top10-chart svg").remove()
 
     // set the dimensions and margins of the graph
-    var margin = {top: 50, right: 25, bottom: 90, left: 25};
+    var margin = {top: 15, right: 25, bottom: 90, left: 30};
 
     var width = document.getElementById('top10-chart').offsetWidth - margin.left - margin.right;
     var height = document.getElementById('top10-chart').offsetHeight  - margin.top - margin.bottom;
@@ -123,7 +123,7 @@ function createChart(response) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
-            .attr("transform", "translate(-10,0)rotate(-45)")
+            .attr("transform", "translate(-10,0)rotate(-65)")
             .style("text-anchor", "end");
 
     // Add Y axis

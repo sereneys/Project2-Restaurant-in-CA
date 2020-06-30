@@ -5,18 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Best Restaurants in Santa Clara, San Mateo and San Francisco Counties</title>
+    <title>Best Restaurants in Bayarea</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />   
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" /> 
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">  
     <link rel="stylesheet" href="static/styles.css">
 </head>
 
-<body>
+<body style="background-color:gray">
 
     <!--Overlay Image with Title -->
-    <div class="container bg-overlay">
+    <div class="container-fluid bg-overlay">
         <div class="row text-center">
             <h1>Best Restaurants in<br>Santa Clara, San Mateo and San Francisco<br>Counties</h1>
             <br><br>
@@ -24,16 +25,16 @@
     </div>
 
     <!--Grid Set-up for Search Button and Drop-down for Search Criterias (2-3-1-6)-->
-    <div class="container" style="border:1px solid #cecece;">
-        <h3>Please enter your search criteria:</h3>
-        <div class="row">
+    <div class="container-fluid" style="border:0px solid #cecece; background-color: white;">
+        <h3>PLEASE ENTER YOUR SEARCH CRITERIA:</h3>
+        <div class="row" id="searchArea">
             <div class="col-md-2">
-                <h4>Select City</h4>
+                <h4>SELECT CITY</h4>
                 <select id="selDataset" onchange="getCity(this.value)"></select>            
             </div>        
             <!--Restaurant Category Drop-down-->
-            <div class="col-md-3">
-                <h4>Restaurant Category</h4>
+            <div class="col-md-2">
+                <h4>SELECT CATEGORY</h4>
                 <select id="category" onchange="getCategory(this.value)"></select>
             </div>    
             
@@ -47,34 +48,30 @@
     </div>
     
     <!--Grid Set-up for Visual Display Section (6-6 with the right one split into two rows)-->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12 col-sm-12" style="border:1px solid #cecece;">
-                <div id="map-holder">
-                    <div class="container fill">
-                        <div id="map">
-                        </div>
-                    </div>
+            <div class="col-xs-12 col-sm-12" id="MAP" style="border:0px solid #cecece; background-color: white">   
+                <div id="map">
                 </div>
             </div>
         </div>
-        <div class = "row">
-            <div class="col-xs-6 col-sm-6" style="border:1px solid #cecece;">
+        <div class = "row" style="height:600px; background-color: white">
+            <div class="col-xs-6 col-sm-6" style="border:0px solid #cecece; background-color: white">
                 <div>
-                    <h3>Top 10 Rated Restaurants</h3>
+                    <h3>TOP 10 RATED RESTAURANTS</h3>
                     <div id = "top10-chart">
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6" style="border:1px solid #cecece;">
+            <div class="col-xs-6 col-sm-6" style="border:0px solid #cecece; background-color: white">
                 <div id="top10-table">
-                    <h3>Top Restaurants with Most # Reviews</h3>
+                    <h3>TOP RESTAURANTS WITH MOST REVIEWS</h3><br>
                     <button class="sort" data-sort="name">
                         Sort by Name
                     </button>
                     <button class="sort" data-sort="rating">
                         Sort by Rating
-                    </button>
+                    </button><br>
                     <table class="table table-striped">
                         <thead>
                             <th class="sort" data-sort="name">Name</th>

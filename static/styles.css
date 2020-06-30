@@ -5,13 +5,16 @@
     background-position: center center;
     color: #fff;
     height: 450px;
-    padding-top: 50px;
+    padding-top: 100px;
+}
+
+#searchArea{
+    margin-bottom: 20px;
 }
 
 #map {
     height: 500px;
 }
-
 
 #top10-chart {
     height: 500px
@@ -19,4 +22,34 @@
 
 #top10-table {
     height: 500px
+}
+
+#search-button {
+    margin-bottom: -70px;
+}
+
+#chartdiv {
+    height: 500px;
+}
+
+#top10-chart {
+    padding: 10px;
+}
+
+.container-fluid {
+    margin-right: 300px;
+    margin-left: 300px;
+}
+
+h1 {
+    font-family: "Poppins",sans-serif !important;
+    font-size: 60px;
+}
+
+h3 {
+    font-family: "Poppins",sans-serif !important;
+}
+
+h4 {
+    font-family: "Poppins",sans-serif !important;
 }
